@@ -3,8 +3,8 @@ use std::hash::{Hash, Hasher};
 use std::path::PathBuf;
 use std::process::{exit, Command, Stdio};
 use structopt::StructOpt;
-
-use log::{error, info};
+use tracing::{error, info};
+use tracing_subscriber;
 
 mod config;
 
@@ -100,7 +100,10 @@ enum Opts {
 }
 
 fn main() {
-    simple_logger::init().unwrap();
+    // simple_logger::init().unwrap();
+    // SimpleLogger::new().init().unwrap();
+    // install global collector configured based on RUST_LOG env var.
+    tracing_subscriber::fmt::init();
 
     let Opts::Remote {
         remote_opts,
