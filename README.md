@@ -89,3 +89,5 @@ It was reported that the `rsync` version shipped with MacOS doesn't support the 
 brew install rsync
 ```
 See also [#10](https://github.com/sgeisler/cargo-remote/issues/10).
+
+See also [substrate cargo remote](https://www.chevdor.com/post/2019/12/23/cargo-remote/)
